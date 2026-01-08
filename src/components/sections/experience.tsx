@@ -4,13 +4,15 @@ import { motion } from "framer-motion";
 import personalData from "@/lib/data.json";
 
 import { LightningReveal } from "@/components/ui/lightning-reveal";
+import { AmbientGlow } from "@/components/ui/ambient-glow";
 
 export function Experience() {
     const { experience } = personalData;
 
     return (
         <section id="experience" className="py-24 px-6 md:px-12 lg:px-24 relative overflow-hidden">
-            <div className="max-w-4xl mx-auto">
+            <AmbientGlow color="blue" position="bottom-right" className="opacity-50" />
+            <div className="max-w-4xl mx-auto relative z-10">
                 <LightningReveal>
                     <h2 className="text-3xl md:text-5xl font-bold mb-16 tracking-tight bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent inline-block">
                         Professional History

@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { LightningReveal } from "@/components/ui/lightning-reveal";
+import { AmbientGlow } from "@/components/ui/ambient-glow";
 
 export function Projects() {
     const projects = [
@@ -29,8 +30,10 @@ export function Projects() {
     ];
 
     return (
-        <section id="projects" className="py-24 px-6 md:px-12 lg:px-24">
-            <div className="max-w-7xl mx-auto">
+        <section id="projects" className="py-24 px-6 md:px-12 lg:px-24 relative overflow-hidden">
+            <AmbientGlow color="cyan" position="top-right" delay={500} />
+            <AmbientGlow color="purple" position="bottom-left" delay={1000} className="w-[300px] h-[300px]" />
+            <div className="max-w-7xl mx-auto relative z-10">
                 <LightningReveal>
                     <h2 className="text-3xl md:text-5xl font-bold mb-16 tracking-tight bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent inline-block">
                         Featured Projects

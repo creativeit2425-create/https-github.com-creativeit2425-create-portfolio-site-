@@ -2,18 +2,21 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { AmbientGlow } from "@/components/ui/ambient-glow";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, Phone, Linkedin, MapPin, Send } from "lucide-react";
 import personalData from "@/lib/data.json";
 
 import { LightningReveal } from "@/components/ui/lightning-reveal";
 
+
 export function Contact() {
     const { personalInfo } = personalData;
 
     return (
-        <section id="contact" className="py-24 px-6 md:px-12 lg:px-24">
-            <div className="max-w-4xl mx-auto">
+        <section id="contact" className="py-24 px-6 md:px-12 lg:px-24 relative overflow-hidden">
+            <AmbientGlow color="indigo" position="center" className="opacity-40" />
+            <div className="max-w-3xl mx-auto relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 40, scale: 0.95 }}
                     whileInView={{ opacity: 1, y: 0, scale: 1 }}
