@@ -107,10 +107,10 @@ export function Hero() {
                     ref={nameRef}
                     initial={{ opacity: 0, y: 20 }}
                     animate={shockActive ? {
-                        scale: 1.05,
-                        textShadow: "0 0 20px rgba(59, 130, 246, 0.8), 0 0 40px rgba(147, 51, 234, 0.5)",
-                        x: [0, -5, 5, -5, 5, 0], // Shake
-                        color: "#ffffff"
+                        scale: 1.02, // Subtle breath
+                        textShadow: "0 0 30px rgba(59, 130, 246, 0.4), 0 0 60px rgba(147, 51, 234, 0.3)", // Soft ambient mist
+                        color: "#f8fafc", // Off-white
+                        x: 0 // No shake
                     } : {
                         opacity: 1,
                         y: 0,
@@ -118,7 +118,7 @@ export function Hero() {
                         textShadow: "none",
                         x: 0
                     }}
-                    transition={shockActive ? { duration: 0.2 } : { duration: 0.5, delay: 0.1 }}
+                    transition={{ duration: 0.4, ease: "easeInOut" }}
                     className="text-4xl md:text-7xl lg:text-8xl font-bold tracking-tight mt-2 mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent inline-block transition-colors break-words max-w-full"
                 >
                     {personalInfo.name}
