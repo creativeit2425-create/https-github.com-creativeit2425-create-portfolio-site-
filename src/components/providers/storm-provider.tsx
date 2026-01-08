@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useState, useCallback, ReactNode, useEffect } from "react";
+import React, { createContext, useContext, useState, useCallback, ReactNode } from "react";
 
 interface StormContextType {
     isFlashing: boolean;
@@ -20,27 +20,6 @@ export const useStorm = () => {
 
 export const StormProvider = ({ children }: { children: ReactNode }) => {
     const [flashIntensity, setFlashIntensity] = useState(0);
-
-    // Wetness effect: 0 to 1 over 60 seconds
-    useEffect(() => {
-        let startTime = Date.now();
-        const duration = 60000; // 60 seconds to full wetness
-
-        const updateWetness = () => {
-            const now = Date.now();
-            const elapsed = now - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-
-            // Update CSS variable for global access
-            document.documentElement.style.setProperty("--wetness", progress.toString());
-
-            if (progress < 1) {
-                requestAnimationFrame(updateWetness);
-            }
-        };
-
-        requestAnimationFrame(updateWetness);
-    }, []);
 
     const triggerFlash = useCallback((intensity = 1) => {
         setFlashIntensity(intensity);

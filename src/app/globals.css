@@ -73,33 +73,6 @@
   }
 }
 
-/* Wetness Effect Tweaks */
-@layer utilities {
-
-  .bg-card\/10,
-  .bg-card\/50 {
-    /* 
-       Darken background as wetness increases.
-       We use a simple calculation: opacity increases slightly with wetness to make it "heavier"
-    */
-    background-color: hsl(var(--card) / calc(0.1 + var(--wetness, 0) * 0.2));
-    /* Add a subtle gloss reflection */
-    box-shadow: inset 0 0 calc(20px * var(--wetness, 0)) rgba(255, 255, 255, calc(0.05 * var(--wetness, 0)));
-  }
-
-  /* Make borders glossier/more visible as it gets wetter */
-  .border-white\/5,
-  .border-white\/10 {
-    border-color: rgba(255, 255, 255, calc(0.05 + var(--wetness, 0) * 0.15));
-  }
-
-  /* Add a bit of blur to glass elements */
-  .backdrop-blur-sm,
-  .backdrop-blur-xl {
-    backdrop-filter: blur(calc(4px + var(--wetness, 0) * 4px));
-  }
-}
-
 html.lenis,
 html.lenis body {
   height: auto;
