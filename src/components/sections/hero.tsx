@@ -18,6 +18,38 @@ interface Projectile {
     startX: string; // % or pixel value
 }
 
+const RunningBoy = () => {
+    return (
+        <motion.div
+            initial={{ x: "-20vw" }}
+            animate={{ x: "120vw" }}
+            transition={{
+                duration: 8,
+                ease: "linear",
+                repeat: Infinity,
+                repeatDelay: 5 // Run every 5 seconds after completing
+            }}
+            className="absolute bottom-[20%] z-20 pointer-events-none"
+            style={{ y: "50%" }} // Vertically align overlap
+        >
+            <motion.div
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 0.4, repeat: Infinity, ease: "easeInOut" }}
+                className="text-8xl filter drop-shadow-2xl"
+                style={{ transform: "scaleX(-1)" }} // Face right
+            >
+                🏃‍♂️
+            </motion.div>
+            {/* Dust Particles */}
+            <motion.div
+                animate={{ opacity: [0, 0.5, 0], scale: [0.5, 1.5], x: -20 }}
+                transition={{ duration: 0.4, repeat: Infinity }}
+                className="absolute bottom-0 left-0 w-4 h-4 bg-white/20 rounded-full blur-sm"
+            />
+        </motion.div>
+    );
+};
+
 export function Hero() {
     const { personalInfo } = personalData;
     const nameRef = useRef<HTMLHeadingElement>(null);
@@ -73,6 +105,13 @@ export function Hero() {
 
     return (
         <section className="min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-24 overflow-hidden relative">
+            {/* Running Boy Layer */}
+            <div className="absolute inset-0 pointer-events-none z-30 flex items-center justify-center overflow-hidden">
+                <div className="relative w-full max-w-7xl h-[300px]"> {/* Container to align with name roughly */}
+                    <RunningBoy />
+                </div>
+            </div>
+
             {/* Projectile Layer */}
             <div className="absolute inset-0 pointer-events-none z-20">
                 <AnimatePresence>
