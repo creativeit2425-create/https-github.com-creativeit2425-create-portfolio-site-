@@ -1,0 +1,99 @@
+{
+  "personalInfo": {
+    "name": "S.N.M. Rayhan",
+    "title": "Digital Marketing Specialist | SEO and Paid Advertising Expert",
+    "email": "s.n.m.rayhan@gmail.com",
+    "phone": "+880 1718 505 169",
+    "location": "Dhaka, Bangladesh",
+    "linkedin": "LinkedIn Profile"
+  },
+  "summary": "A results-driven Digital Marketing and Performance Specialist with a strong analytical foundation from a B.Sc. in Computer Science. Proven experience in full-funnel campaign management, leveraging technical acumen for advanced tracking (CAPI, GTM) and comprehensive SEO audits. Expertise spans paid search (Meta and Google Ads), CRO, content strategy, and Email Marketing. Eager to apply data-informed strategies to drive measurable ROI and deliver profitable growth in a challenging industry role.",
+  "experience": [
+    {
+      "title": "Project-Based Intern (Practical Project Phase)",
+      "company": "Creative IT Institute",
+      "location": "Dhaka, BD",
+      "period": "Jun 2025 – Sep 2025",
+      "responsibilities": [
+        "Developed a cross-platform content strategy for Facebook, Instagram, and LinkedIn that grew simulated follower engagement by 25% over four months.",
+        "Designed and executed multi-step Email Marketing campaigns, utilizing A/B testing on subject lines and CTAs to achieve a 28% lift in engagement rate.",
+        "Conducted in-depth competitor analysis and market research to inform campaign strategies for over 15 client-facing projects.",
+        "Created automated lead nurturing sequences using Messenger Chatbots, improving response time and initial lead qualification effectiveness."
+      ]
+    },
+    {
+      "title": "Digital Marketing Trainee (Academic Project)",
+      "company": "Creative IT Institute",
+      "location": "Dhaka, BD",
+      "period": "Feb 2025 – May 2025",
+      "responsibilities": [
+        "Managed a simulated $5k monthly budget across Meta and Google Ads, applying CRO techniques to achieve an 18% lift in conversion volume.",
+        "Oversaw strategic planning for a simulated product launch, mapping the customer journey and managing the entire marketing funnel.",
+        "Implemented Facebook Pixel and Conversion API alongside Google Tag Manager (GTM), establishing end-to-end conversion tracking capabilities.",
+        "Executed a comprehensive Technical SEO Audit using SEMrush/Ahrefs, identifying 30+ critical structural issues and recommending fixes for a projected 10% increase in organic visibility."
+      ]
+    }
+  ],
+  "skills": {
+    "Performance Marketing": ["CRO", "A/B Testing", "Funnel Optimization", "Lead Generation", "ROI Tracking"],
+    "Paid Media": ["Google Ads (Search/Display)", "Meta Ads (Facebook/Instagram)", "LinkedIn Marketing", "Budget Management"],
+    "SEO & Content": ["On-Page/Off-Page/Technical SEO", "Keyword Research", "Content Strategy", "Website Audits", "YouTube SEO"],
+    "Analytics & Tracking": ["Google Analytics (GA4)", "Google Tag Manager (GTM)", "Conversion API", "Meta Pixel", "Google Search Console (GSC)"],
+    "Marketing Tech Stack": ["SEMrush", "Ahrefs", "Moz", "Meta Ads Manager", "WordPress", "Email Marketing Platforms"],
+    "Creative & Design": ["Canva", "Adobe Illustrator", "Ad/Banner Design", "Social Media Graphics", "Video Thumbnails"]
+  },
+  "education": [
+    {
+      "degree": "B.Sc. in Computer Science and Engineering",
+      "institution": "United International University",
+      "graduation": "Expected Graduation: May 2026",
+      "details": "Relevant Coursework: Data Structures, Database Management, Data Analytics"
+    },
+    {
+      "degree": "Higher Secondary Certificate (HSC)",
+      "institution": "BAF Shaheen College, Sylhet",
+      "period": "2018–2020",
+      "details": "GPA: 5.00 / 5.00"
+    },
+    {
+      "degree": "Secondary School Certificate (SSC)",
+      "institution": "Habiganj Govt. High School",
+      "period": "2013–2018",
+      "details": "GPA: 5.00 / 5.00"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Professional Digital Marketing",
+      "institution": "Creative IT Institute",
+      "instructor": "Md. Ahasan"
+    }
+  ],
+  "languages": ["Bangla: Native", "English: Fluent", "Hindi: Working Proficiency"],
+  "leadership": [
+    {
+      "role": "Assistant Head of HR",
+      "organization": "UIU Sports Club",
+      "period": "Apr 2022 – Present",
+      "description": "Manages member recruitment, maintains records, and provides HR operational support for club events."
+    },
+    {
+      "role": "Project Lead and Community Engagement Specialist",
+      "organization": "Ovijatri",
+      "period": "Aug 2017 – Dec 2020",
+      "description": "Directed youth-driven community initiatives and managed all project planning and outreach activities."
+    },
+    {
+      "role": "Team Captain",
+      "organization": "Fierce Falcon Cricket Club",
+      "period": "Dec 2024 – Present",
+      "description": "Led team strategy, training sessions, and motivated members to achieve top performance. Champion: Vice Chancellor’s Cup T-20 Cricket Tournament 2024"
+    },
+    {
+      "role": "Member",
+      "organization": "Creative IT Sports Club",
+      "period": "Jan 2025 – Present",
+      "description": "Participates in club activities promoting teamwork, fitness, and organizational spirit."
+    }
+  ]
+}
