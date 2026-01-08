@@ -5,6 +5,7 @@ import personalData from "@/lib/data.json";
 
 import { LightningReveal } from "@/components/ui/lightning-reveal";
 import { AmbientGlow } from "@/components/ui/ambient-glow";
+import { ScrollReveal, RevealItem } from "@/components/ui/scroll-reveal";
 
 export function Experience() {
     const { experience } = personalData;
