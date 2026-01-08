@@ -4,7 +4,7 @@ import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import Image from "next/image"
-import { motion, useScroll, useMotionValueEvent } from "framer-motion"
+import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
@@ -89,22 +89,34 @@ export function SiteHeader() {
             </div>
 
             {/* Mobile Menu */}
-            {mobileMenuOpen && (
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.95 }}
-                    className="absolute top-20 left-4 right-4 p-4 bg-card border border-border rounded-xl shadow-2xl flex flex-col gap-2 md:hidden"
-                >
-                    {navItems.map((item) => (
-                        <Link key={item.name} href={item.href} onClick={() => setMobileMenuOpen(false)}>
-                            <Button variant="ghost" className="w-full justify-start text-lg">
-                                {item.name}
-                            </Button>
-                        </Link>
-                    ))}
-                </motion.div>
-            )}
+            <AnimatePresence>
+                {mobileMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95, y: -20 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        exit={{ opacity: 0, scale: 0.95, y: -20 }}
+                        transition={{ duration: 0.2 }}
+                        className="absolute top-24 left-4 right-4 p-6 bg-background/80 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl flex flex-col gap-4 md:hidden overflow-hidden ring-1 ring-white/5"
+                    >
+                        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 opacity-50" />
+                        {navItems.map((item, i) => (
+                            <motion.div
+                                key={item.name}
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: i * 0.1 }}
+                            >
+                                <Link href={item.href} onClick={() => setMobileMenuOpen(false)}>
+                                    <Button variant="ghost" className="w-full justify-start text-lg h-auto py-3 font-light relative group overflow-hidden">
+                                        <span className="relative z-10">{item.name}</span>
+                                        <div className="absolute inset-0 bg-white/5 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300" />
+                                    </Button>
+                                </Link>
+                            </motion.div>
+                        ))}
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </motion.header>
     )
 }

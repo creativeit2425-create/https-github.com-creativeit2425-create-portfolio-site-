@@ -119,7 +119,7 @@ export function Hero() {
                         x: 0
                     }}
                     transition={shockActive ? { duration: 0.2 } : { duration: 0.5, delay: 0.1 }}
-                    className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mt-2 mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent inline-block transition-colors"
+                    className="text-4xl md:text-7xl lg:text-8xl font-bold tracking-tight mt-2 mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent inline-block transition-colors break-words max-w-full"
                 >
                     {personalInfo.name}
                 </motion.h1>
