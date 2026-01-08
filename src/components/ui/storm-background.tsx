@@ -57,7 +57,7 @@ export const StormBackground = ({ className }: Props) => {
                     x: Math.random() * width,
                     y: Math.random() * height,
                     length: Math.random() * 20 + 10,
-                    velocity: Math.random() * 10 + 15,
+                    velocity: Math.random() * 5 + 8, // Reduced speed (was 10+15)
                     alpha: Math.random() * 0.4 + 0.1,
                 });
             }
