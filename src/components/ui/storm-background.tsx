@@ -51,14 +51,17 @@ export const StormBackground = ({ className }: Props) => {
             const numDrops = Math.floor((width * height) / 1000);
             const numClouds = 8; // Large drifting clouds
 
-            // Rain
+            // Rain - Natural Physics
             for (let i = 0; i < numDrops; i++) {
+                // Depth factor (0 = far, 1 = close)
+                const depth = Math.random();
+
                 rain.push({
                     x: Math.random() * width,
                     y: Math.random() * height,
-                    length: Math.random() * 20 + 10,
-                    velocity: Math.random() * 6 + 15, // High speed (reduced from max)
-                    alpha: Math.random() * 0.3 + 0.1, // Slightly more subtle
+                    length: 15 + depth * 25, // Closer drops are longer (15-40px)
+                    velocity: 10 + depth * 20, // Closer drops fall faster due to parallax (10-30px/frame)
+                    alpha: 0.1 + depth * 0.4, // Closer drops are more visible (0.1-0.5)
                 });
             }
 
