@@ -5,6 +5,8 @@ import { SmoothScroll } from "@/components/providers/smooth-scroll";
 import { cn } from "@/lib/utils";
 
 import { GalaxyBackground } from "@/components/ui/galaxy-background";
+import { StormBackground } from "@/components/ui/storm-background";
+import { StormProvider } from "@/components/providers/storm-provider";
 import { SiteHeader } from "@/components/layout/nav";
 import { SiteFooter } from "@/components/layout/footer";
 
@@ -23,12 +25,15 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <body className={cn("min-h-screen bg-transparent font-sans antialiased text-foreground", inter.variable)} suppressHydrationWarning>
-        <SmoothScroll>
-          <GalaxyBackground />
-          <SiteHeader />
-          {children}
-          <SiteFooter />
-        </SmoothScroll>
+        <StormProvider>
+          <SmoothScroll>
+            <GalaxyBackground className="-z-20" />
+            <StormBackground />
+            <SiteHeader />
+            {children}
+            <SiteFooter />
+          </SmoothScroll>
+        </StormProvider>
       </body>
     </html >
   );

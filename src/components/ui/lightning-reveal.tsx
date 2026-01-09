@@ -2,6 +2,7 @@
 
 import React, { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import { useStorm } from "@/components/providers/storm-provider";
 import { cn } from "@/lib/utils";
 
 interface Props {
@@ -13,15 +14,17 @@ interface Props {
 export const LightningReveal = ({ children, className, delay = 100 }: Props) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-100px" });
+    const { triggerFlash } = useStorm();
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
         if (isInView && !isVisible) {
+            triggerFlash(0.8);
             setTimeout(() => {
                 setIsVisible(true);
             }, delay);
         }
-    }, [isInView, isVisible, delay]);
+    }, [isInView, isVisible, triggerFlash, delay]);
 
     return (
         <div ref={ref} className={cn("relative", className)}>
