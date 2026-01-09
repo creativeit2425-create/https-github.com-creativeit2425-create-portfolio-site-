@@ -7,7 +7,8 @@ import Image from "next/image"
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react"
+import { Menu, X, CloudRain, Moon } from "lucide-react"
+import { useStorm } from "@/components/providers/storm-provider"
 
 const navItems = [
     { name: "Skills", href: "/#skills" },
@@ -22,6 +23,7 @@ export function SiteHeader() {
     const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false)
     const { scrollY } = useScroll()
     const pathname = usePathname()
+    const { theme, toggleTheme } = useStorm()
 
     useMotionValueEvent(scrollY, "change", (latest) => {
         const previous = scrollY.getPrevious()
@@ -68,6 +70,16 @@ export function SiteHeader() {
                         />
                     </div>
                 </Link>
+
+                {/* Theme Toggle */}
+                <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={toggleTheme}
+                    className="mr-2 text-white/70 hover:text-white hover:bg-white/10 rounded-full"
+                >
+                    {theme === 'storm' ? <CloudRain className="w-5 h-5 text-cyan-400" /> : <Moon className="w-5 h-5 text-indigo-400" />}
+                </Button>
 
                 {/* Desktop Nav */}
                 <nav className="hidden md:flex items-center gap-1">

@@ -4,8 +4,7 @@ import "./globals.css";
 import { SmoothScroll } from "@/components/providers/smooth-scroll";
 import { cn } from "@/lib/utils";
 
-import { GalaxyBackground } from "@/components/ui/galaxy-background";
-import { StormBackground } from "@/components/ui/storm-background";
+import { BackgroundManager } from "@/components/layout/background-manager";
 import { StormProvider } from "@/components/providers/storm-provider";
 import { SiteHeader } from "@/components/layout/nav";
 import { SiteFooter } from "@/components/layout/footer";
@@ -27,8 +26,7 @@ export default function RootLayout({
       <body className={cn("min-h-screen bg-transparent font-sans antialiased text-foreground", inter.variable)} suppressHydrationWarning>
         <StormProvider>
           <SmoothScroll>
-            <GalaxyBackground className="-z-20" />
-            <StormBackground />
+            <BackgroundManager />
             <SiteHeader />
             {children}
             <SiteFooter />

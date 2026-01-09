@@ -6,6 +6,8 @@ interface StormContextType {
     isFlashing: boolean;
     triggerFlash: (intensity?: number) => void;
     flashIntensity: number;
+    theme: "storm" | "galaxy";
+    toggleTheme: () => void;
 }
 
 const StormContext = createContext<StormContextType | undefined>(undefined);
@@ -20,6 +22,7 @@ export const useStorm = () => {
 
 export const StormProvider = ({ children }: { children: ReactNode }) => {
     const [flashIntensity, setFlashIntensity] = useState(0);
+    const [theme, setTheme] = useState<"storm" | "galaxy">("storm");
 
     const triggerFlash = useCallback((intensity = 1) => {
         setFlashIntensity(intensity);
@@ -30,12 +33,18 @@ export const StormProvider = ({ children }: { children: ReactNode }) => {
         }, 100);
     }, []);
 
+    const toggleTheme = useCallback(() => {
+        setTheme((prev) => (prev === "storm" ? "galaxy" : "storm"));
+    }, []);
+
     return (
         <StormContext.Provider
             value={{
                 isFlashing: flashIntensity > 0,
                 triggerFlash,
                 flashIntensity,
+                theme,
+                toggleTheme,
             }}
         >
             {children}
