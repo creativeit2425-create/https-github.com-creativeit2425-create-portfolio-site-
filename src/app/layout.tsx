@@ -4,11 +4,9 @@ import "./globals.css";
 import { SmoothScroll } from "@/components/providers/smooth-scroll";
 import { cn } from "@/lib/utils";
 
-import { StormBackground } from "@/components/ui/storm-background";
+import { GalaxyBackground } from "@/components/ui/galaxy-background";
 import { SiteHeader } from "@/components/layout/nav";
 import { SiteFooter } from "@/components/layout/footer";
-
-import { StormProvider } from "@/components/providers/storm-provider";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -25,15 +23,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <body className={cn("min-h-screen bg-transparent font-sans antialiased text-foreground", inter.variable)} suppressHydrationWarning>
-        <StormProvider>
-          <SmoothScroll>
-            <StormBackground />
-            <SiteHeader />
-            {children}
-            <SiteFooter />
-          </SmoothScroll>
-        </StormProvider>
+        <SmoothScroll>
+          <GalaxyBackground />
+          <SiteHeader />
+          {children}
+          <SiteFooter />
+        </SmoothScroll>
       </body>
-    </html>
+    </html >
   );
 }
